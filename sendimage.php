@@ -31,6 +31,7 @@
     mysql_select_db("flyers",$con);
     $qry="insert into bulletin (name,flyer,PostDate) values ('$name','$image','$postdate')";
     $result=mysql_query($qry,$con);	
+	mysql_close($con);
 	
 	
 ?>
