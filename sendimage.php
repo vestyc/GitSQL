@@ -24,13 +24,14 @@
 	$today=getdate();
 	$postdate=$today['yday'];
 	
-    $name= 'image.png';
+    $name= $_REQUEST['name'];
     $image= $base;
 
 	$con=mysql_connect("localhost","kaif15","real madrid");
     mysql_select_db("flyers",$con);
-    $qry="insert into bulletin (name,flyer,PostDate) values ('$name','$image','$postdate')";
+    $qry="INSERt INTO bulletin (name,flyer,PostDate) VALUES ('$name','$image','$postdate')";
     $result=mysql_query($qry,$con);	
+	mysql_close($con);
 	
 	
 ?>
