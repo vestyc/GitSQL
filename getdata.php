@@ -2,7 +2,8 @@
 	
 	//added code to retrieve bitmap from MySQL database
 	
-	$index = $_REQUEST['index'];
+	//$index = $_REQUEST['index'];
+	$index = 0;
 	
 	//Retrieving the latest uploaded record to database
 	//Index is the number of records to skip
@@ -22,9 +23,7 @@
 	if($index<=$records){
 		$qry="SELECT * FROM bulletin ORDER BY id DESC LIMIT 3";
 		$result=mysql_query($qry,$con);	
-	
-		$sqldata=mysql_fetch_array($result);
-		
+			
 		$i = 0;
 	
 		while($sqldata=mysql_fetch_array($result)){
